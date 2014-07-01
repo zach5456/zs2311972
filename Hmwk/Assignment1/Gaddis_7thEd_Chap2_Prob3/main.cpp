@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
 
-  double price = 52, salesPrice, totalPrice, countyPrice;
+  float price = 52, salesPrice, totalPrice, countyPrice;
   salesPrice = price * 0.04;
   countyPrice =price * 0.02;
   totalPrice = price + salesPrice + countyPrice;

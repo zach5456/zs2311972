@@ -11,8 +11,8 @@ using namespace std;
 
 int main() {
 
-  double apples = 28, oranges = 37, pears = 24, grapes = 32, peaches = 33, sum;
-  double totalEaten;
+  float apples = 28, oranges = 37, pears = 24, grapes = 32, peaches = 33, sum;
+  float totalEaten;
   sum = apples + oranges + pears + grapes + peaches;
   totalEaten = sum / 5;
   

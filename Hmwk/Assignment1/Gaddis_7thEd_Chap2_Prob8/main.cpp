@@ -11,10 +11,10 @@ using namespace std;
 
 int main() {
 
-  double shirt = 12.95, pants = 24.95, shoes = 6.95, socks = 14.95;
-  double briefs = 3.95, tax = 0.06, shirtTotal, pantsTotal, shoesTotal;
-  double socksTotal, briefsTotal, shirtTax, pantsTax, shoesTax, socksTax;
-  double briefsTax;
+  float shirt = 12.95, pants = 24.95, shoes = 6.95, socks = 14.95;
+  float briefs = 3.95, tax = 0.06, shirtTotal, pantsTotal, shoesTotal;
+  float socksTotal, briefsTotal, shirtTax, pantsTax, shoesTax, socksTax;
+  float briefsTax;
   
   shirtTax = shirt * tax;
   pantsTax = pants * tax;

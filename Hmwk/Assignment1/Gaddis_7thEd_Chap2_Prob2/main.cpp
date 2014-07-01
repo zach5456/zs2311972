@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 
-  double companyIncome = 4.6e6, eastCoast; 
+  float companyIncome = 4.6e6, eastCoast; 
   eastCoast = companyIncome * 0.62;
   
   cout << "The ammount the East Coast portion made is $" << eastCoast << endl;

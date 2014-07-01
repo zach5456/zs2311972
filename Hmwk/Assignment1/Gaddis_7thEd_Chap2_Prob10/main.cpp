@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 
-  double gallonsHeld = 12, milesDriven = 350, mpg;
+  float gallonsHeld = 12, milesDriven = 350, mpg;
   mpg = milesDriven / gallonsHeld;
           
   cout << "The total MPG that a Charger is " << mpg << "." << endl;

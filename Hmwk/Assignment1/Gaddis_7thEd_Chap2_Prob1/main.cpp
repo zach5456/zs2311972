@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 
-  double apple =  62, orange = 99, total;
+  float apple =  62, orange = 99, total;
   total = apple + orange;
           
   cout << "The total fruit eaten was " << total << "." << endl;

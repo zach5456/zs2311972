@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 
-  double gasTank = 20.0, town = 21.5, highway = 26.8, distance;
+  float gasTank = 20.0, town = 21.5, highway = 26.8, distance;
   
   distance = gasTank * town;
   cout << "The total distance driven in town is " << distance << "." << endl;

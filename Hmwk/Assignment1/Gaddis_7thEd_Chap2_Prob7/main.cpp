@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 
-  double waterLevel, riseRate = 1.5e-3;
+  float waterLevel, riseRate = 1.5e-3;
   
   waterLevel = riseRate * 5;
   cout << "The ocean will be " << waterLevel << " higher in 5 years." << endl;

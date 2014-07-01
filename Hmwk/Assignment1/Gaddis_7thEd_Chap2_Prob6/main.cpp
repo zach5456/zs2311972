@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 
-  double payAmount = 1.7e3, payPeriods = 26, annualPay;
+  float payAmount = 1.7e3, payPeriods = 26, annualPay;
   annualPay = payAmount * payPeriods;
   
   cout << "The total amount Shannon made this year was $ " << annualPay<< endl;
