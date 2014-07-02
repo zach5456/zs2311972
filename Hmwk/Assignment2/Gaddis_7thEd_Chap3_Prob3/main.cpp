@@ -36,7 +36,7 @@ int main() {
 
   average = (testA + testB + testC + testD + testE) / 5.0;
    
-  cout << setprecision(1) << fixed;
+  cout << setprecision(3) << showpoint;
   cout << "The average of the tests is " << average << "." << endl;
           
   return 0;

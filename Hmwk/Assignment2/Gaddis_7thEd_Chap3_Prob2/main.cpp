@@ -34,7 +34,7 @@ int main() {
   
   sales = classA + classB + classC;
    
-  cout << setprecision(2) << fixed;
+  cout << setprecision(6) << showpoint;
   cout << "The total amount is $ " << sales << "." << endl;
   
   return 0;
