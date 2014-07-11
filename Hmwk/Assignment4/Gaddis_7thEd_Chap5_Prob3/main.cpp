@@ -24,7 +24,7 @@ int main() {
   
   cout << "Year\tRise" << endl;
   
-  for (int year = START_YEAR; year <= END_YEAR; year++)
+  for (year = START_YEAR; year <= END_YEAR; year++)
   {
     total = year * rise;
     cout << year << "\t" << total << endl;
