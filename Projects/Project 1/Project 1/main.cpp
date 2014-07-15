@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -15,13 +16,17 @@ using namespace std;
  * 
  */
 int main() {
+   //seed random function here
+  unsigned seed = time (0);
+  srand(seed);
   
   //set variables
   const int TOWER = 1;
   const int CAVE = 2;
-  int choice, fight;
+  int choice , endFight;
   int hp = 100, mp = 20, dragonHp = 150, ogreHp = 150;
-  char chest;
+  char chest, fight;
+
   
   //Explaining what's happening in the game and making a story
   cout << "You are a squire in the kingdom of Zir.\n";
@@ -68,33 +73,73 @@ int main() {
       }
     cout << "You finally arrive at the lair of the dragon. \n";
     cout << "Prepare yourself for battle.\n";
+    
     do
       {
+        int sword = rand() % 1 + 10, spell = rand() % 1 + 25;
+        
         cout << "You have " << hp << " HP and " << mp << " Mana remaining.\n";
         cout << "1. Fight\t\t2. Magic (Fireball/10 MP)\n";
         cin >> fight;
         
           switch (fight)
             {
-              case '1': cout << "You do " << rand() % 1 + 10 << ".\n";
+              case '1': cout << "You do " << sword << " damage.\n";
+                        dragonHp = dragonHp - sword;
                         break;
-              case '2': cout << "You do " << rand() % 1 + 25 << ".\n";
+              case '2': if (mp <=0)
+                          {
+                            cout << "You do not have enough Mana.\n";
+                            cout << "You must fight with your sword.\n";
+                            cout << "You do " << sword << " damage.";
+                            cout << "\n";
+                          }
+                        else
+                          cout << "You do " << spell << " damage.\n";
+                          dragonHp = dragonHp - spell;
+                          mp = mp - 10;
                         break;
               default: cout << "That's not a valid option. Please enter your ";
-                       cout << "coice again.\n";
+                       cout << "choice again.\n";
                        cin >> fight;
                       
                        switch (fight)
                         {
-                          case '1': cout << "You do " << rand() % 1 + 10 << ".";
-                                    cout << "\n";
+                          case '1': cout << "You do " << sword << " damage.\n";
+                                    dragonHp = dragonHp - sword;
                                     break;
-                          case '2': cout << "You do " << rand() % 1 + 25 << ".";
-                                    cout << "\n";
+                          case '2': cout << "You do " << spell << " damage.\n";
+                                    dragonHp = dragonHp - spell;
+                                    mp = mp - 10;
                         }
             }
-          cout << "The dragon does " << rand() % 1 + 12 << " damage to you.\n";
-      }
+        
+        int dragonDmg = rand() % 1 + 12;
+        
+        cout << "The dragon does " << dragonDmg << " damage to you.\n";
+        hp = hp - dragonDmg;
+                
+        cout << "The dragon still has " << dragonHp << " HP left.\n";
+        cout << "Do you want to keep fighting? 1. Yes or 2. No.\n";
+        cin >> endFight;
+          
+      } while (endFight != 2);
+      
+  if (hp <= 0)
+    {
+      cout << "You have died on your quest.\n";
+      cout << "The kingdom mourns your death.\n";
+      cout << "GAME OVER";
+    }
+  else
+    {
+      cout << "You have slain the dragon.\n";
+      cout << "You return victoriously to the kingdom with the dragon's ";
+      cout << "head as proof of your victory.\n";
+      cout << "King Mark knights you and the kingdoms cheers.\n";
+      cout << "CONGRADULATIONS YOU WIN!";
+    }
+        
   return 0;
 }
 
