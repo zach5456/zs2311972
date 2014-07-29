@@ -31,12 +31,12 @@ int main() {
   char chest, fight, door;
   string name;
 
-  
+  //take everything in brackets and make it into a 2 dimension array adding names of kingdom/king/knight{
   //Explaining what's happening in the game and making a story
   cout << "You are a squire in the kingdom of Zir.\n";
   cout << "Enter your name.\n";
   getline(cin, name);
-  cout << name << ", you are going on a quest to become a knight set by ";
+  cout << name << ", you are going on a quest to become a knight sent by ";
   cout << "King Mark\n";
   cout << "You also have a special ability that allows you to ";
   cout << "regen 2 HP per round you fight.\n";
@@ -45,6 +45,7 @@ int main() {
   cout << name << ", you are in the forest and find the ogre's cave and the";
   cout << "dragon's tower.\n";
   cout << name << ", do you choose to enter the cave or the tower.\n";
+  //}
   
   //Display quest options
   cout << "1. Tower\n";
@@ -58,7 +59,7 @@ int main() {
     cout << "As you ascend the tower you come across a chest do you open it?\n";
     cout << "Y/N\n";
     cin >> chest;
-    
+    //{take everything in brackets and turn into a function
     //Run trap sequence
     switch (chest)
       {
@@ -84,6 +85,7 @@ int main() {
                               cout <<" move on.\n\n";
                   }
       }
+    //}
     cout << "You finally arrive at the lair of the dragon. \n";
     cout << "Prepare yourself for battle.\n\n";
     
@@ -95,7 +97,8 @@ int main() {
         cout << "You have " << hp << " HP and " << mp << " Mana remaining.\n";
         cout << left << "1. Fight\t\t2. Magic (Fireball/10 MP)\n";
         cin >> fight;
-          //Decide how to fight
+        //{take switch statement in bracket and make a function  
+        //Decide how to fight
           switch (fight)
             {
               case '1': cout << "You do " << sword << " damage.\n";
@@ -144,7 +147,7 @@ int main() {
                                         }
                         }
             }
-        
+        //}
         int dragonDmg = rand() % 12 + 1;
         
         cout << "The dragon does " << dragonDmg << " damage to you.\n";
@@ -193,12 +196,13 @@ int main() {
     cout << "Room do you open it?\n";
     cout << "Y/N\n";
     cin >> door;
-    
+    //{turn everything in brackets into a function
     //Run trap sequence
     switch (door)
       {
         case 'y':
-        case 'Y': cout << "You triggered a trap and have died. GAME OVER\n";
+        case 'Y': cout << "You triggered a trap and have taken serious ";
+                  cout << "damage.\n";
                   break;
         case 'n':
         case 'N': cout << "You ignore the booby trapped room and move on.\n";
@@ -219,6 +223,7 @@ int main() {
                               cout <<" move on.\n\n";
                   }
       }
+    //}
     cout << "You finally arrive at the den of the ogre. \n";
     cout << "Prepare yourself for battle.\n\n";
     
@@ -230,7 +235,7 @@ int main() {
         cout << "You have " << hp << " HP and " << mp << " Mana remaining.\n";
         cout << left << "1. Fight\t\t2. Magic (Iceball/10 MP)\n";
         cin >> fight;
-        
+        //{turn everything in brackets into a function
           //Decide how to fight
           switch (fight)
             {
@@ -280,7 +285,7 @@ int main() {
                                         }
                         }
             }
-        
+        //}
         int ogreDmg = rand() % 13 + 1;
         
         cout << "The ogre does " << ogreDmg << " damage to you.\n";
