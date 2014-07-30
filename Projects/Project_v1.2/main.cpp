@@ -3,7 +3,7 @@
  * Author: Stewart, Zach
  * Class: 46024
  *
- * Created on July 14, 2014, 7:00 PM
+ * Created on July 29, 2014, 7:00 PM
  */
 
 #include <iostream>
@@ -33,7 +33,6 @@ int main() {
   int ogre(short, short);
   void chest();
   void door();
-  int output();
   
   //set variables
   const int TOWER = 1;
