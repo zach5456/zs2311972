@@ -20,12 +20,6 @@ using namespace std;
 
 ofstream outputFile;
 
-int main() {
-  outputFile.open("game.txt");
-   //seed random function here
-  unsigned seed = time (0);
-  srand(seed);
-  
   //set up function prototypes
   int dragonFight(float, short);
   int ogreFight(float, short);
@@ -33,6 +27,13 @@ int main() {
   int ogre(short, short);
   void chest();
   void door();
+  void pract(int, int);
+
+int main() {
+  outputFile.open("game.txt");
+   //seed random function here
+  unsigned seed = time (0);
+  srand(seed);
   
   //set variables
   const int TOWER = 1;
@@ -40,7 +41,8 @@ int main() {
   const int NAMES = 3;
   string name[NAMES];
   float dragonHp = 150, ogreHp = 150;
-  short hp = 100, mp = 30;
+  short hp = 100, mp = 30, dummy = 20;
+  int sword = rand() % 12 + 1;
   int choice;
   
   //Explaining what's happening in the game and making a story
@@ -58,6 +60,10 @@ int main() {
   getline(cin, name[2]);
   cout << "Before going " << name[2]<< " gives you a sword and shield.\n";
   cout << name[0] << ", your mission is to slay either the dragon or the ogre\n";
+  cout << "But before you go you should practice.\n";
+  //run fight practice.
+  pract(dummy, sword);
+
   cout << name[0] << ", you are in the forest and find the ogre's cave and the";
   cout << "dragon's tower.\n";
   cout << name[0] << ", do you choose to enter the cave or the tower.\n";
@@ -169,96 +175,96 @@ int main() {
   outputFile << name[0] << ", do you choose to enter the cave or the tower.\n";
   outputFile << "1. Tower\n";
   outputFile << "2. Cave\n";
-outputFile << name[0] << " has chosen to enter the tower and fight the dragon.\n";
- outputFile << "You finally arrive at the lair of the dragon. \n";
-    outputFile << "Prepare yourself for battle.\n\n";
-outputFile << name[0] << " and the dragon both have died.\n";
-        outputFile << "Although you died, you slain the dragon.\n";
-        outputFile << name[0] << " is posthumously knighted and celebrated";
-        outputFile << " throughout the kingdom. GAMEOVER.\n";
-outputFile << name[0] << " has fled from the battle with the dragon.\n";
-        outputFile << "You are banished from the kingdom and must live the ";
-        outputFile << "rest of your life in disgrace.\n";
-        outputFile << "GAME OVER " << name[0] << " Coward of the Kingdom.\n";
-outputFile << name[0] << " has died on your quest.\n";
-        outputFile << "The kingdom mourns your death.\n";
-        outputFile << "GAME OVER";
-outputFile << name[0] << " has slain the dragon.\n";
-        outputFile << "You return victoriously to the kingdom with the ";
-        outputFile << "dragon's head as proof of your victory.\n";
-        outputFile << "King Mark knights you and the kingdoms cheers.\n";
-        outputFile << "CONGRADULATIONS SIR " << name[0] << " YOU WIN!\n";
-outputFile << name[0] << " has chosen to enter the cave and fight the ogre.\n";
-    outputFile << "You finally arrive at the den of the ogre. \n";
-    outputFile << "Prepare yourself for battle.\n\n";
-outputFile << name[0] << " and the dragon both have died.\n";
-      outputFile << "Although you died, you slaid the dragon.\n";
-      outputFile << name[0] << " is posthumously knighted and celebrated  ";
-      outputFile << "throughout the kingdom. GAMEOVER.\n";
-outputFile << name[0] << " has fled from the battle with the ogre.\n";
-      outputFile << "You are banished from the kingdom and must live the ";
-      outputFile << "rest of your life in disgrace.\n";
-      outputFile << "GAME OVER " << name[0] << " Coward of the Kingdom.\n";
- outputFile << name[0] << " has died on your quest.\n";
-      outputFile << "The kingdom mourns your death.\n";
-      outputFile << "GAME OVER";
-outputFile << name[0] << " has slain the ogre.\n";
-      outputFile << "You return victoriously to the kingdom with the ogre's ";
-      outputFile << "head as proof of your victory.\n";
-      outputFile << "King Mark knights you and the kingdoms cheers.\n";
-      outputFile << "CONGRADULATIONS SIR " << name[0] << " YOU WIN!";
+  outputFile << name[0] << " has chosen to enter the tower and fight the dragon.\n";
+  outputFile << "You finally arrive at the lair of the dragon. \n";
+  outputFile << "Prepare yourself for battle.\n\n";
+  outputFile << name[0] << " and the dragon both have died.\n";
+  outputFile << "Although you died, you slain the dragon.\n";
+  outputFile << name[0] << " is posthumously knighted and celebrated";
+  outputFile << " throughout the kingdom. GAMEOVER.\n";
+  outputFile << name[0] << " has fled from the battle with the dragon.\n";
+  outputFile << "You are banished from the kingdom and must live the ";
+  outputFile << "rest of your life in disgrace.\n";
+  outputFile << "GAME OVER " << name[0] << " Coward of the Kingdom.\n";
+  outputFile << name[0] << " has died on your quest.\n";
+  outputFile << "The kingdom mourns your death.\n";
+  outputFile << "GAME OVER";
+  outputFile << name[0] << " has slain the dragon.\n";
+  outputFile << "You return victoriously to the kingdom with the ";
+  outputFile << "dragon's head as proof of your victory.\n";
+  outputFile << "King Mark knights you and the kingdoms cheers.\n";
+  outputFile << "CONGRADULATIONS SIR " << name[0] << " YOU WIN!\n";
+  outputFile << name[0] << " has chosen to enter the cave and fight the ogre.\n";
+  outputFile << "You finally arrive at the den of the ogre. \n";
+  outputFile << "Prepare yourself for battle.\n\n";
+  outputFile << name[0] << " and the dragon both have died.\n";
+  outputFile << "Although you died, you slaid the dragon.\n";
+  outputFile << name[0] << " is posthumously knighted and celebrated  ";
+  outputFile << "throughout the kingdom. GAMEOVER.\n";
+  outputFile << name[0] << " has fled from the battle with the ogre.\n";
+  outputFile << "You are banished from the kingdom and must live the ";
+  outputFile << "rest of your life in disgrace.\n";
+  outputFile << "GAME OVER " << name[0] << " Coward of the Kingdom.\n";
+  outputFile << name[0] << " has died on your quest.\n";
+  outputFile << "The kingdom mourns your death.\n";
+  outputFile << "GAME OVER";
+  outputFile << name[0] << " has slain the ogre.\n";
+  outputFile << "You return victoriously to the kingdom with the ogre's ";
+  outputFile << "head as proof of your victory.\n";
+  outputFile << "King Mark knights you and the kingdoms cheers.\n";
+  outputFile << "CONGRADULATIONS SIR " << name[0] << " YOU WIN!";
   outputFile << "As you ascend the tower you come across a chest do you open it?\n";
   outputFile << "Y/N\n";
-outputFile << "You triggered a trap but it was inactive. Let ";
-              outputFile << "this be a warning for next time.\n\n";
-outputFile << "You ignore the booby trapped chest and move ";
-                  outputFile << "on.\n\n";
-outputFile << "That is not a valid option. Enter you choice ";
-                 outputFile << "again.\n\n";
-outputFile << "You triggered a trap but it was ";
-                              outputFile << "inactive. Let this be a warning ";
-                              outputFile << "for next time.\n\n";
-outputFile << "You ignore the booby trapped ";
-                              outputFile <<"chest and move on.\n\n";
+  outputFile << "You triggered a trap but it was inactive. Let ";
+  outputFile << "this be a warning for next time.\n\n";
+  outputFile << "You ignore the booby trapped chest and move ";
+  outputFile << "on.\n\n";
+  outputFile << "That is not a valid option. Enter you choice ";
+  outputFile << "again.\n\n";
+  outputFile << "You triggered a trap but it was ";
+  outputFile << "inactive. Let this be a warning ";
+  outputFile << "for next time.\n\n";
+  outputFile << "You ignore the booby trapped ";
+  outputFile <<"chest and move on.\n\n";
   outputFile << "As you enter the cave you come across a door marked with Treasure";
   outputFile << "Room do you open it?\n";
   outputFile << "Y/N\n";
-outputFile << "You triggered a trap but it was inactive. ";
-                  outputFile << "Let this be a warning for next time.\n\n";
-outputFile << "You ignore the booby trapped room and move ";
-                  outputFile << "on.\n\n";
-outputFile << "That is not a valid option. Enter you choice ";
-                 outputFile << "again.\n\n";
-outputFile << "You triggered a trap but it was  ";
-                              outputFile << "inactive. Let this be a warning ";
-                              outputFile << "for next time.\n\n";
-outputFile << "You ignore the booby trapped ";
-                              outputFile <<"door and move on.\n\n";
-outputFile << left << "1. Fight\t\t2. Magic (Fireball/10 MP)\n";
-                            outputFile << "You do not have enough Mana.\n";
-                            outputFile << "You must fight with your sword.\n";
-outputFile << "That's not a valid option. Please enter ";
-                       outputFile << "your choice again.\n";
-                                        outputFile << "You do not have enough";
-                                        outputFile << " Mana.\n";
-                                        outputFile << "You must fight with your";
-                                        outputFile << " sword.\n";
-                                        outputFile << "\n\n";
-          outputFile << "The dragon still has " << dragonHp << " HP left.\n\n";
-          outputFile << "Do you want to keep fighting? 1. Yes or 2. No.\n\n";     
+  outputFile << "You triggered a trap but it was inactive. ";
+  outputFile << "Let this be a warning for next time.\n\n";
+  outputFile << "You ignore the booby trapped room and move ";
+  outputFile << "on.\n\n";
+  outputFile << "That is not a valid option. Enter you choice ";
+  outputFile << "again.\n\n";
+  outputFile << "You triggered a trap but it was  ";
+  outputFile << "inactive. Let this be a warning ";
+  outputFile << "for next time.\n\n";
+  outputFile << "You ignore the booby trapped ";
+  outputFile <<"door and move on.\n\n";
+  outputFile << left << "1. Fight\t\t2. Magic (Fireball/10 MP)\n";
+  outputFile << "You do not have enough Mana.\n";
+  outputFile << "You must fight with your sword.\n";
+  outputFile << "That's not a valid option. Please enter ";
+  outputFile << "your choice again.\n";
+  outputFile << "You do not have enough";
+  outputFile << " Mana.\n";
+  outputFile << "You must fight with your";
+  outputFile << " sword.\n";
+  outputFile << "\n\n";
+  outputFile << "The dragon still has " << dragonHp << " HP left.\n\n";
+  outputFile << "Do you want to keep fighting? 1. Yes or 2. No.\n\n";     
   outputFile << "You still have " << hp << " left and " << mp << " left.\n";          
   outputFile << "Do you want to keep fighting? 1. Yes or 2. No.\n\n";
-outputFile << left << "1. Fight\t\t2. Magic (Iceball/10 MP)\n";
-                            outputFile << "You do not have enough Mana.\n";
-                            outputFile << "You must fight with your sword.\n";
-outputFile << "That's not a valid option. Please enter ";
-                       outputFile << "your choice again.\n";
-                                        outputFile << "You do not have enough";
-                                        outputFile << "Mana.\n";
-                                        outputFile << "You must fight with your";
-                                        outputFile << "sword.\n";
-        outputFile << "The ogre still has " << ogreHp << " HP left.\n\n";
-        outputFile << "Do you want to keep fighting? 1. Yes or 2. No.\n\n"; 
+  outputFile << left << "1. Fight\t\t2. Magic (Iceball/10 MP)\n";
+  outputFile << "You do not have enough Mana.\n";
+  outputFile << "You must fight with your sword.\n";
+  outputFile << "That's not a valid option. Please enter ";
+  outputFile << "your choice again.\n";
+  outputFile << "You do not have enough";
+  outputFile << "Mana.\n";
+  outputFile << "You must fight with your";
+  outputFile << "sword.\n";
+  outputFile << "The ogre still has " << ogreHp << " HP left.\n\n";
+  outputFile << "Do you want to keep fighting? 1. Yes or 2. No.\n\n"; 
   outputFile << "You still have " << hp << " HP and " << mp << " MP left.\n";
   outputFile << "Do you want to keep fighting? 1. Yes or 2. No.\n\n";
 
@@ -533,3 +539,13 @@ int ogre(short hp = 100, short mp = 100)
       } while (endFight != 2);
       return hp;      
   }
+
+void pract(int dummy = 20, int sword = rand() % 12 + 1)
+{
+  for (int count = 1; count <= dummy; count++)
+  {
+    cout << "You do " << sword << " damage.\n";
+    outputFile << "You do " << sword << " damage.\n";
+    dummy = dummy - sword;
+  }
+}
